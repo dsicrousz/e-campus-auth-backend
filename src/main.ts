@@ -17,13 +17,14 @@ async function bootstrap() {
     }),
   );
 
+  const config = app.get(ConfigService);
+
   // Activer CORS pour les requêtes cross-origin
   app.enableCors({
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    origin: config.get('BETTER_AUTH_URL'),
     credentials: true,
   });
-
-  const config = app.get(ConfigService);
 
   const port = config.get('PORT') as number;
   await app.listen(port);
