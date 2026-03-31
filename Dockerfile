@@ -69,4 +69,4 @@ COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 3100
 
 # Run the application.
-CMD yarn start
+CMD node dist/main
