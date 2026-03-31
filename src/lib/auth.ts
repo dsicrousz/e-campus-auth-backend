@@ -41,12 +41,12 @@ export const auth: any = betterAuth({
   },
   secret:
     process.env.BETTER_AUTH_SECRET || 'your-secret-key-change-in-production',
-  baseURL: 'http://localhost:3100',
+  baseURL: process.env.APP_URL,
   cors: {
-    origin: ['http://localhost:5173', 'http://localhost:3000'], // Specific origin instead of wildcard
+    origin: process.env.BETTER_AUTH_URL, // Specific origin instead of wildcard
     credentials: true, // Allow credentials
   },
-  trustedOrigins: [`${process.env.BETTER_AUTH_URL}`, 'http://localhost:3000'],
+  trustedOrigins: [`${process.env.BETTER_AUTH_URL}`],
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
