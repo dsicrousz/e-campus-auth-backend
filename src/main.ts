@@ -21,8 +21,8 @@ async function bootstrap() {
 
   // Activer CORS pour les requêtes cross-origin
   app.enableCors({
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    origin: config.get('BETTER_AUTH_URL'),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    origin: config.get('CORS_ORIGINS')?.split(',') || [],
     credentials: true,
   });
 

@@ -43,10 +43,10 @@ export const auth: any = betterAuth({
     process.env.BETTER_AUTH_SECRET || 'your-secret-key-change-in-production',
   baseURL: process.env.APP_URL,
   cors: {
-    origin: process.env.BETTER_AUTH_URL, // Specific origin instead of wildcard
+    origin: process.env.CORS_ORIGINS?.split(',') || [], // Specific origin instead of wildcard
     credentials: true, // Allow credentials
   },
-  trustedOrigins: [`${process.env.BETTER_AUTH_URL}`],
+  trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [],
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
