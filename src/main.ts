@@ -22,7 +22,10 @@ async function bootstrap() {
   // Activer CORS pour les requêtes cross-origin
   app.enableCors({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    origin: config.get('CORS_ORIGINS')?.split(',') || [],
+    origin: config.get('CORS_ORIGINS')?.split(',') || [
+      'https://ecampus.crousz.com',
+      'https://ecampusauth.crousz.com',
+    ],
     credentials: true,
   });
 

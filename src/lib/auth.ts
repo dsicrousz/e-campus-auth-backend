@@ -46,7 +46,10 @@ export const auth: any = betterAuth({
     origin: process.env.CORS_ORIGINS?.split(',') || [], // Specific origin instead of wildcard
     credentials: true, // Allow credentials
   },
-  trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [],
+  trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [
+    'https://ecampus.crousz.com',
+    'https://ecampusauth.crousz.com',
+  ],
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
