@@ -49,7 +49,19 @@ export const auth: any = betterAuth({
   trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [
     'https://ecampus.crousz.com',
     'https://ecampusauth.crousz.com',
+    'https://authapi.crousz.com',
   ],
+  advanced: {
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: process.env.COOKIE_DOMAIN || '.crousz.com',
+    },
+    defaultCookieAttributes: {
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'none' as const,
+      partitioned: false,
+    },
+  },
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
