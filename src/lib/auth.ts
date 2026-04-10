@@ -48,8 +48,23 @@ export const auth: any = betterAuth({
   },
   trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [
     'https://ecampus.crousz.com',
-    'https://ecampusauth.crousz.com',
+    'https://authapi.crousz.com',
   ],
+  advanced: {
+    cookiePrefix: 'better-auth',
+    cookies: {
+      sessionToken: {
+        name: 'session_token',
+        attributes: {
+          domain: '.crousz.com',
+          sameSite: 'none',
+          secure: true,
+          httpOnly: true,
+          maxAge: 60 * 60 * 24 * 7, // 7 days
+        },
+      },
+    },
+  },
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
