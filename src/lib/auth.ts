@@ -46,12 +46,6 @@ export const auth: any = betterAuth({
     origin: process.env.CORS_ORIGINS?.split(',') || [], // Specific origin instead of wildcard
     credentials: true, // Allow credentials
   },
-  advanced: {
-    crossSubDomainCookies: {
-      enabled: process.env.NODE_ENV === 'production',
-      domain: 'authapi.crousz.com', // your domain
-    },
-  },
   trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [
     'https://ecampus.crousz.com',
     'https://ecampusauth.crousz.com',
