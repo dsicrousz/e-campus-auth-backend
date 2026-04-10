@@ -47,7 +47,6 @@ export const auth: any = betterAuth({
     credentials: true, // Allow credentials
   },
   advanced: {
-    useSecureCookies: true,
     crossSubDomainCookies: {
       enabled: process.env.NODE_ENV === 'production',
       domain: 'crousz.com', // your domain
