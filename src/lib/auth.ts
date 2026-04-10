@@ -49,7 +49,7 @@ export const auth: any = betterAuth({
   advanced: {
     crossSubDomainCookies: {
       enabled: process.env.NODE_ENV === 'production',
-      domain: 'crousz.com', // your domain
+      domain: 'authapi.crousz.com', // your domain
     },
   },
   trustedOrigins: process.env.CORS_ORIGINS?.split(',') || [
