@@ -4,7 +4,6 @@ import { MongoClient } from 'mongodb';
 import { admin } from 'better-auth/plugins/admin';
 import { ac, roles } from '../auth/access-control';
 import 'dotenv/config';
-import { dash } from '@better-auth/infra';
 
 const mongoUrl =
   process.env.DATABASE_URL || 'mongodb://127.0.0.1:27017/auth-service';
@@ -63,6 +62,5 @@ export const auth: any = betterAuth({
       ac,
       roles,
     }),
-    dash(),
   ],
 });
