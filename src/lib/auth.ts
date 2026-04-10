@@ -55,7 +55,8 @@ export const auth: any = betterAuth({
     cookies: {
       sessionToken: {
         name: 'session_token',
-        sameSite: 'None',
+        sameSite: 'none',
+        secure: true,
       },
     },
   },
