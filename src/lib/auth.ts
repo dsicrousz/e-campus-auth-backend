@@ -57,6 +57,7 @@ export const auth: any = betterAuth({
         name: 'session_token',
         sameSite: 'none',
         secure: true,
+        domain: '.crousz.com',
       },
     },
   },
