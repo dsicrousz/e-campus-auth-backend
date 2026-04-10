@@ -50,6 +50,13 @@ export const auth: any = betterAuth({
     'https://ecampus.crousz.com',
     'https://ecampusauth.crousz.com',
   ],
+  advanced: {
+    cookiePrefix: 'better-auth',
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: '.crousz.com',
+    },
+  },
   plugins: [
     admin({
       adminRoles: ['admin', 'superadmin'],
