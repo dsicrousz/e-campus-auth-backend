@@ -59,8 +59,6 @@ export const auth: any = betterAuth({
           domain: '.crousz.com',
           sameSite: 'none',
           secure: true,
-          httpOnly: true,
-          maxAge: 60 * 60 * 24 * 7, // 7 days
         },
       },
     },
