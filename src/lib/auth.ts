@@ -52,7 +52,7 @@ export const auth: any = betterAuth({
   advanced: {
     cookiePrefix: 'better-auth',
     crossSubDomainCookies: {
-      enabled: process.env.NODE_ENV === 'production',
+      enabled: true,
       domain: '.crousz.com',
     },
   },
